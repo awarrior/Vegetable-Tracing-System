@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="sale.business.Business" table="business">
+		<id name="id" column="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="identifier" column="bIdentifier" type="string" />
+<!--		<one-to-one name="employee" class="sale.employee.Employee" property-ref="bIdentifier"/>-->
+		<property name="name" column="bName" type="string" />
+		<property name="address" column="bAddress" type="string" />
+		<property name="effective" column="effective" type="short" />
+	</class>
+</hibernate-mapping>

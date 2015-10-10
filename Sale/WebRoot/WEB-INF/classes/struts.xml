@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="actions" namespace="/" extends="struts-default" >
+		<interceptors>
+			<interceptor name="login" class="sale.actions.LoginInterceptor">
+			</interceptor>
+			<interceptor-stack name="loginInterceptor">
+				<interceptor-ref name="login" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>		
+		</interceptors>
+		
+		<action name="login" class="sale.actions.LoginAction">
+			<result name="admin">/admin.jsp</result>
+			<result name="purchase">/purchase.jsp</result>
+			<result name="sale">/sale.jsp</result>
+			<result name="input">/index.jsp</result>
+			<interceptor-ref name="loginInterceptor">
+				<param name="includeMethods">translate</param>
+			</interceptor-ref>
+		</action>
+		
+<!--		<action name="logout" class="sale.actions.LogoutAction">-->
+<!--			<result name="success">/index.jsp</result>-->
+<!--			<result name="input">/index.jsp</result>-->
+<!--		</action>-->
+		
+		<action name="sale" class="sale.actions.SaleAction">
+			<result name="success">/sale.jsp</result>
+			<result name="input">/sale.jsp</result>
+		</action>
+		
+		<action name="purchase" class="sale.actions.PurchaseAction">
+			<result name="success">/purchase.jsp</result>
+			<result name="input">/purchase.jsp</result>
+		</action>
+		
+		<action name="admin" class="sale.actions.AdminAction">
+			<result name="success">/admin.jsp</result>
+			<result name="input">/admin.jsp</result>
+		</action>
+	</package>
+</struts>      

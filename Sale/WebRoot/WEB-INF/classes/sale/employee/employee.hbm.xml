@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping>
+	<class name="sale.employee.Employee" table="employee">
+		<id name="id" column="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="bidentifier" column="bIdentifier" type="string" />
+<!--		<many-to-one name="bIdentifier" cascade="none" class="sale.business.Business" unique="true" column="bIdentifier" />-->
+		<property name="user" column="user" type="string" />
+		<property name="password" column="password" type="char[]" />
+		<property name="permission" column="permission" type="char" />
+		<property name="effective" column="effective" type="short" />
+	</class>
+</hibernate-mapping>
